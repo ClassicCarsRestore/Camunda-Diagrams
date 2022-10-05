@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_188ptx9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:collaboration id="Collaboration_0jzm57m">
+    <bpmn:participant id="Participant_11ku9ex" name="Classic Car Restoration" processRef="restoration_repair_paint_additional" />
+  </bpmn:collaboration>
+  <bpmn:process id="restoration_repair_paint_additional" name="Restoration Repair Paint Additional" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1082cx5">
+      <bpmn:lane id="Lane_0uc040s" name="Car Paint">
+        <bpmn:flowNodeRef>Event_1u67u2f</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1naw1zu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_04ao5eo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0u6co2s</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0rz0ldf</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_09r51zq</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:endEvent id="Event_1u67u2f" name="Proceed with preservation and restoration">
+      <bpmn:incoming>Flow_08ow0qm</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="Event_1naw1zu" name="">
+      <bpmn:outgoing>Flow_0qpp5qr</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_04ao5eo" name="Paint: Paint part">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0qpp5qr</bpmn:incoming>
+      <bpmn:outgoing>Flow_08w56t6</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0u6co2s" name="Are there any additional parts to paint with a different color/technique?">
+      <bpmn:incoming>Flow_08w56t6</bpmn:incoming>
+      <bpmn:outgoing>Flow_1y8q9da</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1a71kos</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:callActivity id="Activity_0rz0ldf" name="Paint additional part" calledElement="restoration_repair_paint_additional">
+      <bpmn:incoming>Flow_1y8q9da</bpmn:incoming>
+      <bpmn:outgoing>Flow_11vhlhz</bpmn:outgoing>
+      <bpmn:standardLoopCharacteristics />
+    </bpmn:callActivity>
+    <bpmn:exclusiveGateway id="Gateway_09r51zq">
+      <bpmn:incoming>Flow_11vhlhz</bpmn:incoming>
+      <bpmn:incoming>Flow_1a71kos</bpmn:incoming>
+      <bpmn:outgoing>Flow_08ow0qm</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_11vhlhz" sourceRef="Activity_0rz0ldf" targetRef="Gateway_09r51zq" />
+    <bpmn:sequenceFlow id="Flow_1y8q9da" name="Yes" sourceRef="Gateway_0u6co2s" targetRef="Activity_0rz0ldf">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{Activity_0rz0ldf== 'Flow_1y8q9da'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1a71kos" name="No" sourceRef="Gateway_0u6co2s" targetRef="Gateway_09r51zq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{Gateway_09r51zq== 'Flow_1a71kos'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_08ow0qm" sourceRef="Gateway_09r51zq" targetRef="Event_1u67u2f" />
+    <bpmn:sequenceFlow id="Flow_08w56t6" sourceRef="Activity_04ao5eo" targetRef="Gateway_0u6co2s" />
+    <bpmn:sequenceFlow id="Flow_0qpp5qr" name="" isImmediate="true" sourceRef="Event_1naw1zu" targetRef="Activity_04ao5eo" />
+    <bpmn:textAnnotation id="sid-C9A5797E-7692-41F5-AE83-477D1D7B40D1">
+      <bpmn:text>According to FIVA's guidelines, there is some flexibility in choosing the paint system as long as it resembles the original one.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0e9mosh" sourceRef="Activity_04ao5eo" targetRef="sid-C9A5797E-7692-41F5-AE83-477D1D7B40D1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0jzm57m">
+      <bpmndi:BPMNShape id="Participant_11ku9ex_di" bpmnElement="Participant_11ku9ex" isHorizontal="true">
+        <dc:Bounds x="160" y="70" width="890" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0uc040s_di" bpmnElement="Lane_0uc040s" isHorizontal="true">
+        <dc:Bounds x="190" y="70" width="860" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0qpp5qr_di" bpmnElement="Flow_0qpp5qr">
+        <di:waypoint x="285" y="200" />
+        <di:waypoint x="351" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08w56t6_di" bpmnElement="Flow_08w56t6">
+        <di:waypoint x="451" y="200" />
+        <di:waypoint x="522" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08ow0qm_di" bpmnElement="Flow_08ow0qm">
+        <di:waypoint x="864" y="200" />
+        <di:waypoint x="932" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1a71kos_di" bpmnElement="Flow_1a71kos">
+        <di:waypoint x="572" y="200" />
+        <di:waypoint x="814" y="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="594" y="213" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1y8q9da_di" bpmnElement="Flow_1y8q9da">
+        <di:waypoint x="547" y="225" />
+        <di:waypoint x="547" y="313" />
+        <di:waypoint x="643" y="313" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="563" y="286" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11vhlhz_di" bpmnElement="Flow_11vhlhz">
+        <di:waypoint x="743" y="313" />
+        <di:waypoint x="839" y="313" />
+        <di:waypoint x="839" y="225" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1u67u2f_di" bpmnElement="Event_1u67u2f">
+        <dc:Bounds x="932" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="910" y="230" width="82" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1naw1zu_di" bpmnElement="Event_1naw1zu">
+        <dc:Bounds x="249" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04ao5eo_di" bpmnElement="Activity_04ao5eo">
+        <dc:Bounds x="351" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0u6co2s_di" bpmnElement="Gateway_0u6co2s" isMarkerVisible="true">
+        <dc:Bounds x="522" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="504" y="97" width="87" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rz0ldf_di" bpmnElement="Activity_0rz0ldf">
+        <dc:Bounds x="643" y="273" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_09r51zq_di" bpmnElement="Gateway_09r51zq" isMarkerVisible="true">
+        <dc:Bounds x="814" y="175" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-C9A5797E-7692-41F5-AE83-477D1D7B40D1_di" bpmnElement="sid-C9A5797E-7692-41F5-AE83-477D1D7B40D1">
+        <dc:Bounds x="350" y="272" width="152" height="98" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0e9mosh_di" bpmnElement="Association_0e9mosh">
+        <di:waypoint x="404" y="240" />
+        <di:waypoint x="406" y="272" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

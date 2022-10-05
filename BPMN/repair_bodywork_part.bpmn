@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:signavio="http://www.signavio.com" id="Definitions_11xs45d" targetNamespace="http://bpmn.io/schema/bpmn" expressionLanguage="http://www.w3.org/TR/XPath" exporter="Camunda Modeler" exporterVersion="4.12.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+  <error id="sid-d7c8d1ad-2134-46b4-8251-40e9628c40d1" />
+  <collaboration id="sid-2176769a-382a-451c-a3da-9f114c93aa2a">
+    <extensionElements>
+      <signavio:signavioDiagramMetaData metaKey="businessunit" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="iso9000ff" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processowner" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processgoal" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="soxrelevant" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="revisionid" metaValue="6a066b5aa9374df5996a2e6e8e315e08" />
+    </extensionElements>
+    <participant id="Participant_11ytl0i" name="Classic Car Restoration" processRef="restoration_repair_bodywork_part">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </participant>
+  </collaboration>
+  <process id="restoration_repair_bodywork_part" name="Restoration Repair Bodywork Part" processType="None" isClosed="false" isExecutable="true">
+    <extensionElements />
+    <laneSet id="sid-55828dd4-0cf6-411d-b7a2-b794aab5a5b2">
+      <lane id="Lane_0mm4mk7" name="Repair Part">
+        <extensionElements>
+          <signavio:signavioMetaData metaKey="bgcolor" metaValue="" />
+          <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        </extensionElements>
+        <flowNodeRef>Gateway_1ppmwpn</flowNodeRef>
+        <flowNodeRef>Gateway_17ijq9n</flowNodeRef>
+        <flowNodeRef>Event_1rciql2</flowNodeRef>
+        <flowNodeRef>Event_0r1h09x</flowNodeRef>
+        <flowNodeRef>Gateway_0pq3w93</flowNodeRef>
+        <flowNodeRef>Activity_10hw3lm</flowNodeRef>
+        <flowNodeRef>Activity_0oxy8e1</flowNodeRef>
+        <flowNodeRef>Activity_15pa3z3</flowNodeRef>
+        <flowNodeRef>Activity_0r0wl4z</flowNodeRef>
+        <flowNodeRef>Activity_0pa5a4v</flowNodeRef>
+        <flowNodeRef>Activity_1l38osa</flowNodeRef>
+        <flowNodeRef>sid-617C83AE-6458-47CA-ADC6-363686B79C10</flowNodeRef>
+        <flowNodeRef>Gateway_1ogpcn2</flowNodeRef>
+        <flowNodeRef>Activity_1gku689</flowNodeRef>
+        <flowNodeRef>Activity_1uu4zjo</flowNodeRef>
+        <flowNodeRef>Activity_16hkilz</flowNodeRef>
+        <flowNodeRef>Activity_1cjtdvl</flowNodeRef>
+      </lane>
+    </laneSet>
+    <exclusiveGateway id="Gateway_1ppmwpn">
+      <incoming>Flow_0d5xf5o</incoming>
+      <incoming>Flow_02ksy3x</incoming>
+      <outgoing>Flow_1fcbdhv</outgoing>
+    </exclusiveGateway>
+    <inclusiveGateway id="Gateway_17ijq9n">
+      <incoming>Flow_09j6rqb</incoming>
+      <incoming>Flow_08u29to</incoming>
+      <incoming>Flow_1esdnca</incoming>
+      <incoming>Flow_0laov3g</incoming>
+      <incoming>Flow_1pakhzr</incoming>
+      <incoming>Flow_0ur74qn</incoming>
+      <outgoing>Flow_0qvbfqa</outgoing>
+    </inclusiveGateway>
+    <startEvent id="Event_1rciql2" name="">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <outgoing>Flow_13r8jx9</outgoing>
+    </startEvent>
+    <endEvent id="Event_0r1h09x" name="Proceed with preservation and restoration">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel ref="text_name" valign="middle" x="27.0" y="54.0" />
+      </extensionElements>
+      <incoming>Flow_1fcbdhv</incoming>
+    </endEvent>
+    <inclusiveGateway id="Gateway_0pq3w93" name="Required tools">
+      <incoming>sid-E94A01B6-0A88-40A8-B315-AA483E504918</incoming>
+      <outgoing>Flow_18pillx</outgoing>
+      <outgoing>Flow_1mt134w</outgoing>
+      <outgoing>Flow_042m00u</outgoing>
+      <outgoing>Flow_0w7cnta</outgoing>
+      <outgoing>Flow_1mmx9f6</outgoing>
+      <outgoing>Flow_1nm6rwo</outgoing>
+    </inclusiveGateway>
+    <userTask id="Activity_10hw3lm" name="Bodywork: Use English Wheel to form compound curves in metal sheet">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_18pillx</incoming>
+      <outgoing>Flow_0laov3g</outgoing>
+    </userTask>
+    <userTask id="Activity_0oxy8e1" name="Bodywork: Use Bending Machine to bend metal sheet">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1mt134w</incoming>
+      <outgoing>Flow_1esdnca</outgoing>
+    </userTask>
+    <userTask id="Activity_15pa3z3" name="Bodywork: Use Bead Roller to add rigid lines in metal sheet">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1mmx9f6</incoming>
+      <outgoing>Flow_1pakhzr</outgoing>
+    </userTask>
+    <userTask id="Activity_0r0wl4z" name="Bodywork: Use Calender to finish or smooth a sheet of metal">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_0w7cnta</incoming>
+      <outgoing>Flow_08u29to</outgoing>
+    </userTask>
+    <userTask id="Activity_0pa5a4v" name="Bodywork: Use Stretcher to stretch a sheet of metal">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_042m00u</incoming>
+      <outgoing>Flow_09j6rqb</outgoing>
+    </userTask>
+    <userTask id="Activity_1l38osa" name="Bodywork: Verify measurements against the original">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_0qvbfqa</incoming>
+      <outgoing>sid-CA6137D9-5A17-4185-BC68-1533AC6AA85E</outgoing>
+    </userTask>
+    <userTask id="sid-617C83AE-6458-47CA-ADC6-363686B79C10" name="Bodywork: Weld identifying plate">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>sid-CA6137D9-5A17-4185-BC68-1533AC6AA85E</incoming>
+      <outgoing>sid-D4DB5108-D891-4686-9FA9-C5FC3A599952</outgoing>
+    </userTask>
+    <exclusiveGateway id="Gateway_1ogpcn2" name="Is there another part to repair?">
+      <incoming>sid-D4DB5108-D891-4686-9FA9-C5FC3A599952</incoming>
+      <outgoing>Flow_02ksy3x</outgoing>
+      <outgoing>Flow_0a01lf7</outgoing>
+    </exclusiveGateway>
+    <callActivity id="Activity_1gku689" name="Repair new part" calledElement="restoration_repair_bodywork_part">
+      <incoming>Flow_0a01lf7</incoming>
+      <outgoing>Flow_0d5xf5o</outgoing>
+      <standardLoopCharacteristics />
+    </callActivity>
+    <sequenceFlow id="Flow_1mmx9f6" name="Bead roller" sourceRef="Gateway_0pq3w93" targetRef="Activity_15pa3z3">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_15pa3z3== 'Flow_1mmx9f6'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0w7cnta" name="Calender" sourceRef="Gateway_0pq3w93" targetRef="Activity_0r0wl4z">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_0r0wl4z== 'Flow_0w7cnta'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_042m00u" name="Stretcher" sourceRef="Gateway_0pq3w93" targetRef="Activity_0pa5a4v">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_0pa5a4v== 'Flow_042m00u'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1mt134w" name="Bending machine" sourceRef="Gateway_0pq3w93" targetRef="Activity_0oxy8e1">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_0oxy8e1== 'Flow_1mt134w'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_18pillx" name="English wheel" sourceRef="Gateway_0pq3w93" targetRef="Activity_10hw3lm">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_10hw3lm== 'Flow_18pillx'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1ehfo2r" sourceRef="Activity_1uu4zjo" targetRef="Activity_16hkilz" />
+    <sequenceFlow id="Flow_1fcbdhv" sourceRef="Gateway_1ppmwpn" targetRef="Event_0r1h09x" />
+    <sequenceFlow id="Flow_0d5xf5o" sourceRef="Activity_1gku689" targetRef="Gateway_1ppmwpn" />
+    <sequenceFlow id="Flow_02ksy3x" name="No" sourceRef="Gateway_1ogpcn2" targetRef="Gateway_1ppmwpn">
+      <conditionExpression xsi:type="tFormalExpression">#{Gateway_1ppmwpn== 'Flow_02ksy3x'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0a01lf7" name="Yes" sourceRef="Gateway_1ogpcn2" targetRef="Activity_1gku689">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_1gku689== 'Flow_0a01lf7'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="sid-D4DB5108-D891-4686-9FA9-C5FC3A599952" name="" sourceRef="sid-617C83AE-6458-47CA-ADC6-363686B79C10" targetRef="Gateway_1ogpcn2">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="sid-CA6137D9-5A17-4185-BC68-1533AC6AA85E" name="" sourceRef="Activity_1l38osa" targetRef="sid-617C83AE-6458-47CA-ADC6-363686B79C10">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0qvbfqa" sourceRef="Gateway_17ijq9n" targetRef="Activity_1l38osa" />
+    <sequenceFlow id="Flow_0laov3g" sourceRef="Activity_10hw3lm" targetRef="Gateway_17ijq9n" />
+    <sequenceFlow id="Flow_09j6rqb" sourceRef="Activity_0pa5a4v" targetRef="Gateway_17ijq9n" />
+    <sequenceFlow id="Flow_08u29to" sourceRef="Activity_0r0wl4z" targetRef="Gateway_17ijq9n" />
+    <sequenceFlow id="Flow_1esdnca" sourceRef="Activity_0oxy8e1" targetRef="Gateway_17ijq9n" />
+    <sequenceFlow id="Flow_1pakhzr" sourceRef="Activity_15pa3z3" targetRef="Gateway_17ijq9n" />
+    <sequenceFlow id="sid-E94A01B6-0A88-40A8-B315-AA483E504918" name="" isImmediate="true" sourceRef="Activity_16hkilz" targetRef="Gateway_0pq3w93">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_13r8jx9" name="" isImmediate="true" sourceRef="Event_1rciql2" targetRef="Activity_1uu4zjo">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <userTask id="Activity_1uu4zjo" name="Bodywork: Identify part to repair">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_13r8jx9</incoming>
+      <outgoing>Flow_1ehfo2r</outgoing>
+    </userTask>
+    <userTask id="Activity_16hkilz" name="Bodywork: Choose correct material and thickness">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1ehfo2r</incoming>
+      <outgoing>sid-E94A01B6-0A88-40A8-B315-AA483E504918</outgoing>
+    </userTask>
+    <sequenceFlow id="Flow_1nm6rwo" name="Manual Work" sourceRef="Gateway_0pq3w93" targetRef="Activity_1cjtdvl">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_1cjtdvl== 'Flow_1nm6rwo'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0ur74qn" sourceRef="Activity_1cjtdvl" targetRef="Gateway_17ijq9n" />
+    <userTask id="Activity_1cjtdvl" name="Bodywork: Manual work">
+      <incoming>Flow_1nm6rwo</incoming>
+      <outgoing>Flow_0ur74qn</outgoing>
+    </userTask>
+    <textAnnotation id="sid-526A9182-1CA7-4F56-A69B-E42DCF843049" signavio:alignment="left">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <text>According to FIVA's guidelines, the identifying plate guarantees the legibility of the produced/patched part.</text>
+    </textAnnotation>
+    <association id="sid-9D388B3E-AAC0-460D-B2D6-7E7BF5E04854" associationDirection="None" sourceRef="sid-617C83AE-6458-47CA-ADC6-363686B79C10" targetRef="sid-526A9182-1CA7-4F56-A69B-E42DCF843049">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </association>
+    <textAnnotation id="sid-2BEF9A03-E74C-4A93-BA25-C65AFDE9FAE9" signavio:alignment="left">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <text>According to FIVA's guidelines, the materials must be the same as the originals with the same thickness.</text>
+    </textAnnotation>
+    <association id="sid-EB37AEA7-4706-4961-A5E3-6A4148A19C38" associationDirection="None" sourceRef="Activity_16hkilz" targetRef="sid-2BEF9A03-E74C-4A93-BA25-C65AFDE9FAE9">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </association>
+    <textAnnotation id="TextAnnotation_0gl3fue">
+      <text>According to FIVA's guidelines, the new parts must have the same measurements as the originals.</text>
+    </textAnnotation>
+    <association id="Association_1cyth6v" sourceRef="Activity_1l38osa" targetRef="TextAnnotation_0gl3fue" />
+    <textAnnotation id="sid-F6B17053-2CAC-409C-B675-17B1CCB26117">
+      <text>According to FIVA's guidelines, the restoration process requires artisanal tools.</text>
+    </textAnnotation>
+    <association id="sid-696EE066-D5EC-4A9E-8959-66CD7F2C472D" associationDirection="None" sourceRef="Activity_0pa5a4v" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+    <association id="sid-A14D1A37-D89A-4D38-A0AF-5B27AC913E6D" associationDirection="None" sourceRef="Activity_0r0wl4z" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+    <association id="sid-375263E4-942E-4F08-A040-387D38D55F6B" associationDirection="None" sourceRef="Activity_15pa3z3" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+    <association id="sid-6C822D16-7D57-48E6-B60E-66FCB323A0B2" associationDirection="None" sourceRef="Activity_0oxy8e1" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+    <association id="sid-924914B1-32B0-4979-834C-2604993CC759" associationDirection="None" sourceRef="Activity_10hw3lm" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+    <association id="Association_0nlon1q" sourceRef="Activity_1cjtdvl" targetRef="sid-F6B17053-2CAC-409C-B675-17B1CCB26117" />
+  </process>
+  <message id="Message_01c7f7x" />
+  <message id="Message_19x9a47" name="RepairBodyworkPartOutOfStock" />
+  <message id="Message_11n1bz8" name="RepairBodyworkPartReceiveReplacement" />
+  <bpmndi:BPMNDiagram id="sid-3b23927c-3d7b-4cda-a773-5eb94a1115e8">
+    <bpmndi:BPMNPlane id="sid-45be1479-5768-4ad4-8daa-2e6245e8ee2f" bpmnElement="sid-2176769a-382a-451c-a3da-9f114c93aa2a">
+      <bpmndi:BPMNShape id="Participant_11ytl0i_gui" bpmnElement="Participant_11ytl0i" isHorizontal="true">
+        <omgdc:Bounds x="160" y="80" width="1885" height="940" />
+        <bpmndi:BPMNLabel labelStyle="sid-f20ba577-24b2-4970-84ac-e99ee0678532">
+          <omgdc:Bounds x="165.00037692780734" y="731.428181421802" width="12.000000000000028" height="125.74285888671875" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0mm4mk7_gui" bpmnElement="Lane_0mm4mk7" isHorizontal="true">
+        <omgdc:Bounds x="190" y="80" width="1855" height="940" />
+        <bpmndi:BPMNLabel labelStyle="sid-f20ba577-24b2-4970-84ac-e99ee0678532">
+          <omgdc:Bounds x="196.00037692780734" y="733.7424667001223" width="12.000000000000028" height="121.11428833007812" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-F6B17053-2CAC-409C-B675-17B1CCB26117_di" bpmnElement="sid-F6B17053-2CAC-409C-B675-17B1CCB26117">
+        <omgdc:Bounds x="1120" y="590" width="153" height="69" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_13r8jx9_gui" bpmnElement="Flow_13r8jx9">
+        <omgdi:waypoint x="275" y="305" />
+        <omgdi:waypoint x="348" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-E94A01B6-0A88-40A8-B315-AA483E504918_gui" bpmnElement="sid-E94A01B6-0A88-40A8-B315-AA483E504918">
+        <omgdi:waypoint x="626" y="305" />
+        <omgdi:waypoint x="704" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pakhzr_di" bpmnElement="Flow_1pakhzr">
+        <omgdi:waypoint x="932" y="565" />
+        <omgdi:waypoint x="1035" y="565" />
+        <omgdi:waypoint x="1035" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1esdnca_di" bpmnElement="Flow_1esdnca">
+        <omgdi:waypoint x="932" y="435" />
+        <omgdi:waypoint x="1035" y="435" />
+        <omgdi:waypoint x="1035" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08u29to_di" bpmnElement="Flow_08u29to">
+        <omgdi:waypoint x="932" y="695" />
+        <omgdi:waypoint x="1035" y="695" />
+        <omgdi:waypoint x="1035" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09j6rqb_di" bpmnElement="Flow_09j6rqb">
+        <omgdi:waypoint x="932" y="820" />
+        <omgdi:waypoint x="1035" y="820" />
+        <omgdi:waypoint x="1035" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0laov3g_di" bpmnElement="Flow_0laov3g">
+        <omgdi:waypoint x="932" y="305" />
+        <omgdi:waypoint x="1010" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qvbfqa_di" bpmnElement="Flow_0qvbfqa">
+        <omgdi:waypoint x="1060" y="305" />
+        <omgdi:waypoint x="1138" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-CA6137D9-5A17-4185-BC68-1533AC6AA85E_gui" bpmnElement="sid-CA6137D9-5A17-4185-BC68-1533AC6AA85E">
+        <omgdi:waypoint x="1238" y="305" />
+        <omgdi:waypoint x="1316" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-D4DB5108-D891-4686-9FA9-C5FC3A599952_gui" bpmnElement="sid-D4DB5108-D891-4686-9FA9-C5FC3A599952">
+        <omgdi:waypoint x="1416" y="305" />
+        <omgdi:waypoint x="1494" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0a01lf7_di" bpmnElement="Flow_0a01lf7">
+        <omgdi:waypoint x="1519" y="280" />
+        <omgdi:waypoint x="1519" y="180" />
+        <omgdi:waypoint x="1622" y="180" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1533" y="193" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02ksy3x_di" bpmnElement="Flow_02ksy3x">
+        <omgdi:waypoint x="1544" y="305" />
+        <omgdi:waypoint x="1800" y="305" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1548" y="278" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0d5xf5o_di" bpmnElement="Flow_0d5xf5o">
+        <omgdi:waypoint x="1722" y="180" />
+        <omgdi:waypoint x="1825" y="180" />
+        <omgdi:waypoint x="1825" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fcbdhv_di" bpmnElement="Flow_1fcbdhv">
+        <omgdi:waypoint x="1850" y="305" />
+        <omgdi:waypoint x="1919" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ehfo2r_di" bpmnElement="Flow_1ehfo2r">
+        <omgdi:waypoint x="448" y="305" />
+        <omgdi:waypoint x="526" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18pillx_di" bpmnElement="Flow_18pillx">
+        <omgdi:waypoint x="754" y="305" />
+        <omgdi:waypoint x="832" y="305" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="750" y="320" width="68" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mt134w_di" bpmnElement="Flow_1mt134w">
+        <omgdi:waypoint x="729" y="330" />
+        <omgdi:waypoint x="729" y="435" />
+        <omgdi:waypoint x="832" y="435" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="741" y="452" width="86" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_042m00u_di" bpmnElement="Flow_042m00u">
+        <omgdi:waypoint x="729" y="330" />
+        <omgdi:waypoint x="729" y="820" />
+        <omgdi:waypoint x="832" y="820" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="761" y="833" width="46" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0w7cnta_di" bpmnElement="Flow_0w7cnta">
+        <omgdi:waypoint x="729" y="330" />
+        <omgdi:waypoint x="729" y="695" />
+        <omgdi:waypoint x="832" y="695" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="761" y="706" width="46" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mmx9f6_di" bpmnElement="Flow_1mmx9f6">
+        <omgdi:waypoint x="729" y="330" />
+        <omgdi:waypoint x="729" y="565" />
+        <omgdi:waypoint x="832" y="565" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="757" y="584" width="55" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nm6rwo_di" bpmnElement="Flow_1nm6rwo">
+        <omgdi:waypoint x="729" y="330" />
+        <omgdi:waypoint x="729" y="930" />
+        <omgdi:waypoint x="832" y="930" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="753" y="943" width="66" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ur74qn_di" bpmnElement="Flow_0ur74qn">
+        <omgdi:waypoint x="932" y="930" />
+        <omgdi:waypoint x="1035" y="930" />
+        <omgdi:waypoint x="1035" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Gateway_1ppmwpn_di" bpmnElement="Gateway_1ppmwpn" isMarkerVisible="true">
+        <omgdc:Bounds x="1800" y="280" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_17ijq9n_di" bpmnElement="Gateway_17ijq9n">
+        <omgdc:Bounds x="1010" y="280" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1rciql2_gui" bpmnElement="Event_1rciql2">
+        <omgdc:Bounds x="245" y="290" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0r1h09x_gui" bpmnElement="Event_0r1h09x">
+        <omgdc:Bounds x="1919" y="292" width="26" height="26" />
+        <bpmndi:BPMNLabel labelStyle="sid-69f549af-75a0-4753-b529-bfb3cfa24746">
+          <omgdc:Bounds x="1891" y="330" width="83" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0pq3w93_di" bpmnElement="Gateway_0pq3w93">
+        <omgdc:Bounds x="704" y="280" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="693" y="256" width="72" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10hw3lm_di" bpmnElement="Activity_10hw3lm">
+        <omgdc:Bounds x="832" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0oxy8e1_di" bpmnElement="Activity_0oxy8e1">
+        <omgdc:Bounds x="832" y="395" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15pa3z3_di" bpmnElement="Activity_15pa3z3">
+        <omgdc:Bounds x="832" y="525" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0r0wl4z_di" bpmnElement="Activity_0r0wl4z">
+        <omgdc:Bounds x="832" y="655" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pa5a4v_di" bpmnElement="Activity_0pa5a4v">
+        <omgdc:Bounds x="832" y="780" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16pmrg6_di" bpmnElement="Activity_1l38osa">
+        <omgdc:Bounds x="1138" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zkt22s_di" bpmnElement="sid-617C83AE-6458-47CA-ADC6-363686B79C10">
+        <omgdc:Bounds x="1316" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1ogpcn2_di" bpmnElement="Gateway_1ogpcn2" isMarkerVisible="true">
+        <omgdc:Bounds x="1494" y="280" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1480" y="337" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gku689_di" bpmnElement="Activity_1gku689">
+        <omgdc:Bounds x="1622" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1uu4zjo_di" bpmnElement="Activity_1uu4zjo">
+        <omgdc:Bounds x="348" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gfug18_di" bpmnElement="Activity_16hkilz">
+        <omgdc:Bounds x="526" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-526A9182-1CA7-4F56-A69B-E42DCF843049_gui" bpmnElement="sid-526A9182-1CA7-4F56-A69B-E42DCF843049">
+        <omgdc:Bounds x="1430" y="391" width="150" height="82" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-2BEF9A03-E74C-4A93-BA25-C65AFDE9FAE9_gui" bpmnElement="sid-2BEF9A03-E74C-4A93-BA25-C65AFDE9FAE9">
+        <omgdc:Bounds x="620" y="150" width="160" height="82" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0gl3fue_di" bpmnElement="TextAnnotation_0gl3fue">
+        <omgdc:Bounds x="1230" y="147" width="160" height="88" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1fxwru2_di" bpmnElement="Activity_1cjtdvl">
+        <omgdc:Bounds x="832" y="890" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="sid-9D388B3E-AAC0-460D-B2D6-7E7BF5E04854_gui" bpmnElement="sid-9D388B3E-AAC0-460D-B2D6-7E7BF5E04854">
+        <omgdi:waypoint x="1373" y="345" />
+        <omgdi:waypoint x="1430" y="424" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-EB37AEA7-4706-4961-A5E3-6A4148A19C38_gui" bpmnElement="sid-EB37AEA7-4706-4961-A5E3-6A4148A19C38">
+        <omgdi:waypoint x="574" y="265" />
+        <omgdi:waypoint x="620" y="193" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1cyth6v_di" bpmnElement="Association_1cyth6v">
+        <omgdi:waypoint x="1191" y="265" />
+        <omgdi:waypoint x="1230" y="191" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-696EE066-D5EC-4A9E-8959-66CD7F2C472D_di" bpmnElement="sid-696EE066-D5EC-4A9E-8959-66CD7F2C472D">
+        <omgdi:waypoint x="932" y="802" />
+        <omgdi:waypoint x="1120" y="650" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-A14D1A37-D89A-4D38-A0AF-5B27AC913E6D_di" bpmnElement="sid-A14D1A37-D89A-4D38-A0AF-5B27AC913E6D">
+        <omgdi:waypoint x="932" y="686" />
+        <omgdi:waypoint x="1120" y="632" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-375263E4-942E-4F08-A040-387D38D55F6B_di" bpmnElement="sid-375263E4-942E-4F08-A040-387D38D55F6B">
+        <omgdi:waypoint x="932" y="568" />
+        <omgdi:waypoint x="1120" y="615" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-6C822D16-7D57-48E6-B60E-66FCB323A0B2_di" bpmnElement="sid-6C822D16-7D57-48E6-B60E-66FCB323A0B2">
+        <omgdi:waypoint x="925" y="474" />
+        <omgdi:waypoint x="1120" y="600" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-924914B1-32B0-4979-834C-2604993CC759_di" bpmnElement="sid-924914B1-32B0-4979-834C-2604993CC759">
+        <omgdi:waypoint x="928" y="343" />
+        <omgdi:waypoint x="1133" y="590" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0nlon1q_di" bpmnElement="Association_0nlon1q">
+        <omgdi:waypoint x="919" y="890" />
+        <omgdi:waypoint x="1132" y="659" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="sid-69f549af-75a0-4753-b529-bfb3cfa24746">
+      <omgdc:Font name="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+    <bpmndi:BPMNLabelStyle id="sid-f20ba577-24b2-4970-84ac-e99ee0678532">
+      <omgdc:Font name="Arial" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</definitions>

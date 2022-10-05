@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:signavio="http://www.signavio.com" id="Definitions_1k1vzuv" targetNamespace="http://bpmn.io/schema/bpmn" expressionLanguage="http://www.w3.org/TR/XPath" exporter="Camunda Modeler" exporterVersion="4.12.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+  <dataStore id="sid-50f73688-5360-4657-adc2-16e526bab6b9" name="Vehicles restoration process database" capacity="0" isUnlimited="false" />
+  <collaboration id="sid-e25d5fdc-0183-43f1-a637-63788ed43475">
+    <extensionElements>
+      <signavio:signavioDiagramMetaData metaKey="businessunit" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="iso9000ff" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processowner" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processgoal" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="soxrelevant" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="revisionid" metaValue="737d6d0c1d3e4cf6a1539702165125a5" />
+    </extensionElements>
+    <participant id="Participant_0ncstpm" name="Classic Car Restoration" processRef="restoration_disassembly_part">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </participant>
+  </collaboration>
+  <process id="restoration_disassembly_part" name="Restoration Disassembly Part" processType="None" isClosed="false" isExecutable="true">
+    <extensionElements />
+    <laneSet id="sid-161c1755-f2e0-47d3-9c06-f697207f7d0f">
+      <lane id="Lane_1yrx2cw" name="Part Disassembly">
+        <extensionElements>
+          <signavio:signavioMetaData metaKey="bgcolor" metaValue="" />
+          <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        </extensionElements>
+        <flowNodeRef>Activity_194d7ak</flowNodeRef>
+        <flowNodeRef>Activity_1gku689</flowNodeRef>
+        <flowNodeRef>Activity_1wba7og</flowNodeRef>
+        <flowNodeRef>Activity_1sl3w45</flowNodeRef>
+        <flowNodeRef>Activity_1ggdj9t</flowNodeRef>
+        <flowNodeRef>Activity_07u690g</flowNodeRef>
+        <flowNodeRef>Gateway_14g3bso</flowNodeRef>
+        <flowNodeRef>Gateway_0alop4t</flowNodeRef>
+        <flowNodeRef>Gateway_178pn7c</flowNodeRef>
+        <flowNodeRef>Gateway_1v3y2bm</flowNodeRef>
+        <flowNodeRef>Event_063t1mg</flowNodeRef>
+        <flowNodeRef>Event_1awztc4</flowNodeRef>
+      </lane>
+    </laneSet>
+    <sequenceFlow id="Flow_0l90gs8" name="Assembly position determined" isImmediate="true" sourceRef="Gateway_1v3y2bm" targetRef="Gateway_178pn7c">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel align="left" distance="17.666672" from="0" orientation="ll" ref="text_name" to="1" valign="bottom" x="568.0" y="270.0" />
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression">#{Gateway_178pn7c== 'Flow_0l90gs8'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0ia7nuv" name="Assembly position undetermined" isImmediate="true" sourceRef="Gateway_1v3y2bm" targetRef="Activity_194d7ak">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel align="left" distance="19.666664" from="1" orientation="lr" ref="text_name" to="2" valign="bottom" x="655.7333374023438" y="160.0" />
+      </extensionElements>
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_194d7ak== 'Flow_0ia7nuv'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0r5xqq0" name="" isImmediate="true" sourceRef="Event_1awztc4" targetRef="Activity_07u690g">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1k9mveu" name="" isImmediate="true" sourceRef="Activity_07u690g" targetRef="Gateway_1v3y2bm">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_01x7ged" name="" isImmediate="true" sourceRef="Activity_194d7ak" targetRef="Gateway_178pn7c">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_120nyoe" name="" isImmediate="true" sourceRef="Gateway_178pn7c" targetRef="Activity_1ggdj9t">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1nncxhe" name="" isImmediate="true" sourceRef="Activity_1ggdj9t" targetRef="Activity_1wba7og">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0nggw4k" name="" isImmediate="true" sourceRef="Activity_1wba7og" targetRef="Activity_1sl3w45">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0ynd5p2" name="" isImmediate="true" sourceRef="Activity_1sl3w45" targetRef="Gateway_14g3bso">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1ls4e2k" name="No" sourceRef="Gateway_14g3bso" targetRef="Gateway_0alop4t">
+      <conditionExpression xsi:type="tFormalExpression">#{Gateway_0alop4t== 'Flow_1ls4e2k'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0ju6ifk" sourceRef="Gateway_0alop4t" targetRef="Event_063t1mg" />
+    <sequenceFlow id="Flow_0muxzvd" name="Yes" sourceRef="Gateway_14g3bso" targetRef="Activity_1gku689">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_1gku689== 'Flow_0muxzvd'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0xxyrst" sourceRef="Activity_1gku689" targetRef="Gateway_0alop4t" />
+    <userTask id="Activity_194d7ak" name="Produce sketches with relevant dimentions">
+      <incoming>Flow_0ia7nuv</incoming>
+      <outgoing>Flow_01x7ged</outgoing>
+    </userTask>
+    <dataStoreReference id="DataStoreReference_1ubximx" name="Vehicles restoration evidence database" dataStoreRef="sid-50f73688-5360-4657-adc2-16e526bab6b9">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel ref="text_name" valign="middle" x="37.0" y="84.0" />
+      </extensionElements>
+    </dataStoreReference>
+    <callActivity id="Activity_1gku689" name="Disassemble new part" calledElement="restoration_disassembly_part">
+      <incoming>Flow_0muxzvd</incoming>
+      <outgoing>Flow_0xxyrst</outgoing>
+    </callActivity>
+    <userTask id="Activity_1wba7og" name="Photograph/film the part after removal">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1nncxhe</incoming>
+      <outgoing>Flow_0nggw4k</outgoing>
+      <dataOutputAssociation id="DataOutputAssociation_0hqr39y">
+        <targetRef>DataStoreReference_1ubximx</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <userTask id="Activity_1sl3w45" name="Label and properly store the part in  container">
+      <incoming>Flow_0nggw4k</incoming>
+      <outgoing>Flow_0ynd5p2</outgoing>
+    </userTask>
+    <userTask id="Activity_1ggdj9t" name="Disassemble part">
+      <incoming>Flow_120nyoe</incoming>
+      <outgoing>Flow_1nncxhe</outgoing>
+    </userTask>
+    <userTask id="Activity_07u690g" name="Photograph/film the part before removal (body and chassis)">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_0r5xqq0</incoming>
+      <outgoing>Flow_1k9mveu</outgoing>
+      <dataOutputAssociation id="DataOutputAssociation_1xzy8zv">
+        <targetRef>DataStoreReference_1ubximx</targetRef>
+      </dataOutputAssociation>
+    </userTask>
+    <exclusiveGateway id="Gateway_14g3bso" name="Is there another part to disassemble?">
+      <incoming>Flow_0ynd5p2</incoming>
+      <outgoing>Flow_1ls4e2k</outgoing>
+      <outgoing>Flow_0muxzvd</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="Gateway_0alop4t">
+      <incoming>Flow_1ls4e2k</incoming>
+      <incoming>Flow_0xxyrst</incoming>
+      <outgoing>Flow_0ju6ifk</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="Gateway_178pn7c" name="" gatewayDirection="Converging">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <incoming>Flow_01x7ged</incoming>
+      <incoming>Flow_0l90gs8</incoming>
+      <outgoing>Flow_120nyoe</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="Gateway_1v3y2bm" name="Is assembly position determined?" gatewayDirection="Diverging">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel align="center" ref="text_name" valign="middle" x="31.0" y="63.0" />
+      </extensionElements>
+      <incoming>Flow_1k9mveu</incoming>
+      <outgoing>Flow_0ia7nuv</outgoing>
+      <outgoing>Flow_0l90gs8</outgoing>
+    </exclusiveGateway>
+    <endEvent id="Event_063t1mg" name="Proceed with disassembly">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel ref="text_name" valign="middle" x="27.0" y="48.0" />
+      </extensionElements>
+      <incoming>Flow_0ju6ifk</incoming>
+    </endEvent>
+    <startEvent id="Event_1awztc4" name="">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <outgoing>Flow_0r5xqq0</outgoing>
+    </startEvent>
+    <textAnnotation id="TextAnnotation_007yj7m">
+      <text>According to FIVA's guidelines, each disassembly operation should be documented with photographs
+before and after the removal.</text>
+    </textAnnotation>
+    <association id="Association_1jaqk49" sourceRef="Activity_1wba7og" targetRef="TextAnnotation_007yj7m" />
+    <association id="Association_1jelimj" sourceRef="Activity_07u690g" targetRef="TextAnnotation_007yj7m" />
+  </process>
+  <bpmndi:BPMNDiagram id="sid-97209344-aea2-4b7b-999f-c06d4d59f11f">
+    <bpmndi:BPMNPlane id="sid-dde0c477-45d3-48f1-8b06-d0e1affda919" bpmnElement="sid-e25d5fdc-0183-43f1-a637-63788ed43475">
+      <bpmndi:BPMNShape id="Participant_0ncstpm_gui" bpmnElement="Participant_0ncstpm" isHorizontal="true">
+        <omgdc:Bounds x="180" y="100" width="1720" height="520" />
+        <bpmndi:BPMNLabel labelStyle="sid-2eee374d-5d74-447b-97e2-20a9a28058d3">
+          <omgdc:Bounds x="164" y="207.12857055664062" width="12.000000000000028" height="125.74285888671875" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1yrx2cw_gui" bpmnElement="Lane_1yrx2cw" isHorizontal="true">
+        <omgdc:Bounds x="210" y="100" width="1690" height="520" />
+        <bpmndi:BPMNLabel labelStyle="sid-2eee374d-5d74-447b-97e2-20a9a28058d3">
+          <omgdc:Bounds x="195" y="225.25714111328125" width="12" height="89.4857177734375" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0xxyrst_di" bpmnElement="Flow_0xxyrst">
+        <omgdi:waypoint x="1620" y="260" />
+        <omgdi:waypoint x="1708" y="260" />
+        <omgdi:waypoint x="1708" y="362" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0muxzvd_di" bpmnElement="Flow_0muxzvd">
+        <omgdi:waypoint x="1432" y="362" />
+        <omgdi:waypoint x="1432" y="260" />
+        <omgdi:waypoint x="1520" y="260" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1451" y="273" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ju6ifk_di" bpmnElement="Flow_0ju6ifk">
+        <omgdi:waypoint x="1733" y="387" />
+        <omgdi:waypoint x="1795" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ls4e2k_di" bpmnElement="Flow_1ls4e2k">
+        <omgdi:waypoint x="1457" y="387" />
+        <omgdi:waypoint x="1683" y="387" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1512" y="363" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ynd5p2_gui" bpmnElement="Flow_0ynd5p2">
+        <omgdi:waypoint x="1344" y="387" />
+        <omgdi:waypoint x="1407" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nggw4k_gui" bpmnElement="Flow_0nggw4k">
+        <omgdi:waypoint x="1181" y="387" />
+        <omgdi:waypoint x="1244" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nncxhe_gui" bpmnElement="Flow_1nncxhe">
+        <omgdi:waypoint x="1018" y="387" />
+        <omgdi:waypoint x="1081" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_120nyoe_gui" bpmnElement="Flow_120nyoe">
+        <omgdi:waypoint x="844" y="387" />
+        <omgdi:waypoint x="918" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01x7ged_gui" bpmnElement="Flow_01x7ged">
+        <omgdi:waypoint x="729" y="260" />
+        <omgdi:waypoint x="824" y="260" />
+        <omgdi:waypoint x="824" y="368" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k9mveu_gui" bpmnElement="Flow_1k9mveu">
+        <omgdi:waypoint x="463" y="387" />
+        <omgdi:waypoint x="526" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0r5xqq0_gui" bpmnElement="Flow_0r5xqq0">
+        <omgdi:waypoint x="305" y="387" />
+        <omgdi:waypoint x="363" y="387" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ia7nuv_gui" bpmnElement="Flow_0ia7nuv">
+        <omgdi:waypoint x="546" y="367" />
+        <omgdi:waypoint x="546" y="260" />
+        <omgdi:waypoint x="629" y="260" />
+        <bpmndi:BPMNLabel labelStyle="sid-3019587c-ecce-46a5-a577-3556a40d4d4d">
+          <omgdc:Bounds x="517" y="216" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0l90gs8_gui" bpmnElement="Flow_0l90gs8">
+        <omgdi:waypoint x="566" y="387" />
+        <omgdi:waypoint x="804" y="387" />
+        <bpmndi:BPMNLabel labelStyle="sid-3019587c-ecce-46a5-a577-3556a40d4d4d">
+          <omgdc:Bounds x="698" y="348" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_13c9447_di" bpmnElement="Activity_194d7ak">
+        <omgdc:Bounds x="629" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_1ubximx_gui" bpmnElement="DataStoreReference_1ubximx">
+        <omgdc:Bounds x="792" y="469" width="63" height="61" />
+        <bpmndi:BPMNLabel labelStyle="sid-2eee374d-5d74-447b-97e2-20a9a28058d3">
+          <omgdc:Bounds x="799" y="545" width="52" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1kk0sed_di" bpmnElement="Activity_1gku689">
+        <omgdc:Bounds x="1520" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_19k8gj5_di" bpmnElement="Activity_1wba7og">
+        <omgdc:Bounds x="1081" y="347" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0phccvp_di" bpmnElement="Activity_1sl3w45">
+        <omgdc:Bounds x="1244" y="347" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03dnk99_di" bpmnElement="Activity_1ggdj9t">
+        <omgdc:Bounds x="918" y="347" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1v7uz2y_di" bpmnElement="Activity_07u690g">
+        <omgdc:Bounds x="363" y="347" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_14g3bso_di" bpmnElement="Gateway_14g3bso" isMarkerVisible="true">
+        <omgdc:Bounds x="1407" y="362" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1393" y="419" width="79" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0alop4t_di" bpmnElement="Gateway_0alop4t" isMarkerVisible="true">
+        <omgdc:Bounds x="1683" y="362" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_178pn7c_gui" bpmnElement="Gateway_178pn7c" isMarkerVisible="true">
+        <omgdc:Bounds x="803.5" y="367" width="40" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1v3y2bm_gui" bpmnElement="Gateway_1v3y2bm" isMarkerVisible="true">
+        <omgdc:Bounds x="526" y="367" width="40" height="40" />
+        <bpmndi:BPMNLabel labelStyle="sid-3019587c-ecce-46a5-a577-3556a40d4d4d">
+          <omgdc:Bounds x="513" y="413" width="62" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_063t1mg_gui" bpmnElement="Event_063t1mg">
+        <omgdc:Bounds x="1795" y="372" width="30" height="30" />
+        <bpmndi:BPMNLabel labelStyle="sid-3019587c-ecce-46a5-a577-3556a40d4d4d">
+          <omgdc:Bounds x="1790" y="413" width="64" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1awztc4_gui" bpmnElement="Event_1awztc4">
+        <omgdc:Bounds x="275" y="372" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_007yj7m_di" bpmnElement="TextAnnotation_007yj7m">
+        <omgdc:Bounds x="800" y="130" width="180" height="82" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1jaqk49_di" bpmnElement="Association_1jaqk49">
+        <omgdi:waypoint x="1131" y="347" />
+        <omgdi:waypoint x="1131" y="165" />
+        <omgdi:waypoint x="980" y="165" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1jelimj_di" bpmnElement="Association_1jelimj">
+        <omgdi:waypoint x="413" y="347" />
+        <omgdi:waypoint x="413" y="170" />
+        <omgdi:waypoint x="800" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0hqr39y_di" bpmnElement="DataOutputAssociation_0hqr39y">
+        <omgdi:waypoint x="1131" y="427" />
+        <omgdi:waypoint x="1131" y="500" />
+        <omgdi:waypoint x="855" y="500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1xzy8zv_di" bpmnElement="DataOutputAssociation_1xzy8zv">
+        <omgdi:waypoint x="413" y="427" />
+        <omgdi:waypoint x="413" y="500" />
+        <omgdi:waypoint x="792" y="500" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="sid-3019587c-ecce-46a5-a577-3556a40d4d4d">
+      <omgdc:Font name="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+    <bpmndi:BPMNLabelStyle id="sid-2eee374d-5d74-447b-97e2-20a9a28058d3">
+      <omgdc:Font name="Arial" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</definitions>

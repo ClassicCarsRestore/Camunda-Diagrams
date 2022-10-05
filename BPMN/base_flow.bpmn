@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:signavio="http://www.signavio.com" id="Definitions_1bsbt5w" targetNamespace="http://bpmn.io/schema/bpmn" expressionLanguage="http://www.w3.org/TR/XPath" exporter="Camunda Modeler" exporterVersion="4.12.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+  <collaboration id="BaseFlowProcess">
+    <extensionElements>
+      <signavio:signavioDiagramMetaData metaKey="businessunit" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="iso9000ff" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processowner" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="processgoal" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="soxrelevant" metaValue="" />
+      <signavio:signavioDiagramMetaData metaKey="revisionid" metaValue="ba51e39965c942688d6d138689524342" />
+    </extensionElements>
+    <participant id="Participant_0nkcr34" name="Classic Car Restoration" processRef="restoration_base">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </participant>
+  </collaboration>
+  <process id="restoration_base" name="Restoration Base" processType="None" isClosed="false" isExecutable="true">
+    <extensionElements />
+    <laneSet id="sid-485d280b-523c-4a8c-89ef-b10d9ae2d09b">
+      <lane id="sid-5afbca98-def4-4a9a-8c8b-6a618a9d6e80">
+        <extensionElements>
+          <signavio:signavioMetaData metaKey="bgcolor" metaValue="" />
+          <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        </extensionElements>
+        <flowNodeRef>Event_0uuc6of</flowNodeRef>
+        <flowNodeRef>Activity_1tui7j8</flowNodeRef>
+        <flowNodeRef>Event_15s806p</flowNodeRef>
+        <flowNodeRef>Activity_0a56lg2</flowNodeRef>
+        <flowNodeRef>Activity_14l8cfg</flowNodeRef>
+        <flowNodeRef>Activity_0112wdd</flowNodeRef>
+        <flowNodeRef>sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4</flowNodeRef>
+        <flowNodeRef>Activity_1pngj6u</flowNodeRef>
+        <flowNodeRef>Activity_096zd4f</flowNodeRef>
+        <flowNodeRef>Gateway_0txhyns</flowNodeRef>
+        <flowNodeRef>Activity_0f6wouh</flowNodeRef>
+        <flowNodeRef>Gateway_1wo11ee</flowNodeRef>
+        <flowNodeRef>Activity_0eelwrr</flowNodeRef>
+      </lane>
+    </laneSet>
+    <endEvent id="Event_0uuc6of" name="End successful restoration">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioLabel ref="text_name" valign="middle" x="16.0" y="54.0" />
+      </extensionElements>
+      <incoming>Flow_0pzibmk</incoming>
+    </endEvent>
+    <userTask id="Activity_1tui7j8" name="Collect vehicle information (schemes, data and paint)">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_0eca59p</incoming>
+      <outgoing>Flow_1okpmrc</outgoing>
+    </userTask>
+    <startEvent id="Event_15s806p" name="Begin restoration process">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+      <outgoing>Flow_1ymddpa</outgoing>
+    </startEvent>
+    <userTask id="Activity_0a56lg2" name="Vehicle check in">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1ymddpa</incoming>
+      <outgoing>Flow_0eca59p</outgoing>
+    </userTask>
+    <callActivity id="Activity_14l8cfg" name="Evaluation" calledElement="restoration_evaluation">
+      <extensionElements>
+        <signavio:signavioStencil id="CollapsedSubprocess" />
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioMetaData metaKey="externaldocuments" metaValue="[]" />
+        <camunda:in variables="all" />
+        <camunda:out variables="all" />
+      </extensionElements>
+      <incoming>Flow_1okpmrc</incoming>
+      <outgoing>Flow_11roknl</outgoing>
+    </callActivity>
+    <callActivity id="Activity_0112wdd" name="Disassembly" calledElement="restoration_disassembly">
+      <extensionElements>
+        <signavio:signavioStencil id="CollapsedSubprocess" />
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioMetaData metaKey="externaldocuments" metaValue="[]" />
+        <camunda:in variables="all" />
+        <camunda:out variables="all" />
+      </extensionElements>
+      <incoming>Flow_11roknl</incoming>
+      <outgoing>Flow_1fnjv0r</outgoing>
+    </callActivity>
+    <callActivity id="sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4" name="Re-evaluation" calledElement="restoration_reevaluation">
+      <extensionElements>
+        <signavio:signavioStencil id="CollapsedSubprocess" />
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioMetaData metaKey="externaldocuments" metaValue="[]" />
+        <camunda:in variables="all" />
+        <camunda:out variables="all" />
+      </extensionElements>
+      <incoming>Flow_1fnjv0r</incoming>
+      <outgoing>sid-1ABF2436-4C51-44F8-B7DC-37F8B0C14A5C</outgoing>
+    </callActivity>
+    <callActivity id="Activity_1pngj6u" name="Preservation and Restoration" calledElement="restoration_repair">
+      <extensionElements>
+        <signavio:signavioStencil id="CollapsedSubprocess" />
+        <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffcc" />
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+        <signavio:signavioMetaData metaKey="externaldocuments" metaValue="[]" />
+        <camunda:in variables="all" />
+        <camunda:out variables="all" />
+      </extensionElements>
+      <incoming>sid-1ABF2436-4C51-44F8-B7DC-37F8B0C14A5C</incoming>
+      <outgoing>Flow_15hmsnf</outgoing>
+    </callActivity>
+    <userTask id="Activity_096zd4f" name="Reassembly">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_15hmsnf</incoming>
+      <outgoing>Flow_197sicn</outgoing>
+    </userTask>
+    <exclusiveGateway id="Gateway_0txhyns" name="Were original parts replaced?">
+      <incoming>Flow_197sicn</incoming>
+      <outgoing>Flow_1i1mgce</outgoing>
+      <outgoing>Flow_13mc2zw</outgoing>
+    </exclusiveGateway>
+    <userTask id="Activity_0f6wouh" name="Deliver original damaged removed parts">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_1i1mgce</incoming>
+      <outgoing>Flow_1t8k1nh</outgoing>
+    </userTask>
+    <exclusiveGateway id="Gateway_1wo11ee">
+      <incoming>Flow_1t8k1nh</incoming>
+      <incoming>Flow_13mc2zw</incoming>
+      <outgoing>Flow_0tmolun</outgoing>
+    </exclusiveGateway>
+    <userTask id="Activity_0eelwrr" name="Vehicle check out">
+      <extensionElements>
+        <camunda:properties>
+          <camunda:property name="Evidence" value="True" />
+        </camunda:properties>
+      </extensionElements>
+      <incoming>Flow_0tmolun</incoming>
+      <outgoing>Flow_0pzibmk</outgoing>
+    </userTask>
+    <sequenceFlow id="Flow_1okpmrc" sourceRef="Activity_1tui7j8" targetRef="Activity_14l8cfg" />
+    <sequenceFlow id="Flow_0pzibmk" sourceRef="Activity_0eelwrr" targetRef="Event_0uuc6of" />
+    <sequenceFlow id="Flow_197sicn" name="" isImmediate="true" sourceRef="Activity_096zd4f" targetRef="Gateway_0txhyns">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_15hmsnf" name="" isImmediate="true" sourceRef="Activity_1pngj6u" targetRef="Activity_096zd4f">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1fnjv0r" name="" isImmediate="true" sourceRef="Activity_0112wdd" targetRef="sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_11roknl" name="" isImmediate="true" sourceRef="Activity_14l8cfg" targetRef="Activity_0112wdd">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="sid-1ABF2436-4C51-44F8-B7DC-37F8B0C14A5C" name="" sourceRef="sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4" targetRef="Activity_1pngj6u">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_1t8k1nh" sourceRef="Activity_0f6wouh" targetRef="Gateway_1wo11ee" />
+    <sequenceFlow id="Flow_1i1mgce" name="Yes" sourceRef="Gateway_0txhyns" targetRef="Activity_0f6wouh">
+      <conditionExpression xsi:type="tFormalExpression">#{Activity_0f6wouh== 'Flow_1i1mgce'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_13mc2zw" name="No" sourceRef="Gateway_0txhyns" targetRef="Gateway_1wo11ee">
+      <conditionExpression xsi:type="tFormalExpression">#{Gateway_1wo11ee== 'Flow_13mc2zw'}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="Flow_0tmolun" sourceRef="Gateway_1wo11ee" targetRef="Activity_0eelwrr" />
+    <sequenceFlow id="Flow_0eca59p" sourceRef="Activity_0a56lg2" targetRef="Activity_1tui7j8" />
+    <sequenceFlow id="Flow_1ymddpa" name="" isImmediate="true" sourceRef="Event_15s806p" targetRef="Activity_0a56lg2">
+      <extensionElements>
+        <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000" />
+      </extensionElements>
+    </sequenceFlow>
+    <textAnnotation id="TextAnnotation_0azwjmr">
+      <text>According to FIVA's guidelines, any modifications should be reversible, keeping any important original parts removed for later use and to serve as reference of their original existence and make.</text>
+    </textAnnotation>
+    <association id="Association_1rcd2tj" sourceRef="Activity_0f6wouh" targetRef="TextAnnotation_0azwjmr" />
+  </process>
+  <bpmndi:BPMNDiagram id="sid-d8c03341-1b0c-46d4-86ee-74aec2bc5a6a">
+    <bpmndi:BPMNPlane id="sid-12cf0bcf-aaed-417a-8ee3-8b32061d5bc6" bpmnElement="BaseFlowProcess">
+      <bpmndi:BPMNShape id="Participant_0nkcr34_gui" bpmnElement="Participant_0nkcr34" isHorizontal="true">
+        <omgdc:Bounds x="160" y="100" width="1890" height="380" />
+        <bpmndi:BPMNLabel labelStyle="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+          <omgdc:Bounds x="165" y="107.12857055664062" width="12.000000000000028" height="125.74285888671875" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-5afbca98-def4-4a9a-8c8b-6a618a9d6e80_gui" bpmnElement="sid-5afbca98-def4-4a9a-8c8b-6a618a9d6e80" isHorizontal="true">
+        <omgdc:Bounds x="190" y="100" width="1860" height="380" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ymddpa_gui" bpmnElement="Flow_1ymddpa">
+        <omgdi:waypoint x="265" y="270" />
+        <omgdi:waypoint x="320" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0eca59p_di" bpmnElement="Flow_0eca59p">
+        <omgdi:waypoint x="420" y="270" />
+        <omgdi:waypoint x="480" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tmolun_di" bpmnElement="Flow_0tmolun">
+        <omgdi:waypoint x="1760" y="270" />
+        <omgdi:waypoint x="1820" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13mc2zw_di" bpmnElement="Flow_13mc2zw">
+        <omgdi:waypoint x="1465" y="295" />
+        <omgdi:waypoint x="1465" y="370" />
+        <omgdi:waypoint x="1735" y="370" />
+        <omgdi:waypoint x="1735" y="295" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1478" y="343" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1i1mgce_di" bpmnElement="Flow_1i1mgce">
+        <omgdi:waypoint x="1490" y="270" />
+        <omgdi:waypoint x="1550" y="270" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1506" y="283" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1t8k1nh_di" bpmnElement="Flow_1t8k1nh">
+        <omgdi:waypoint x="1650" y="270" />
+        <omgdi:waypoint x="1710" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="sid-1ABF2436-4C51-44F8-B7DC-37F8B0C14A5C_gui" bpmnElement="sid-1ABF2436-4C51-44F8-B7DC-37F8B0C14A5C">
+        <omgdi:waypoint x="1060" y="270" />
+        <omgdi:waypoint x="1120" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11roknl_gui" bpmnElement="Flow_11roknl">
+        <omgdi:waypoint x="740" y="270" />
+        <omgdi:waypoint x="800" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fnjv0r_gui" bpmnElement="Flow_1fnjv0r">
+        <omgdi:waypoint x="900" y="270" />
+        <omgdi:waypoint x="960" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15hmsnf_gui" bpmnElement="Flow_15hmsnf">
+        <omgdi:waypoint x="1220" y="270" />
+        <omgdi:waypoint x="1280" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_197sicn_gui" bpmnElement="Flow_197sicn">
+        <omgdi:waypoint x="1380" y="270" />
+        <omgdi:waypoint x="1440" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pzibmk_di" bpmnElement="Flow_0pzibmk">
+        <omgdi:waypoint x="1920" y="270" />
+        <omgdi:waypoint x="1975" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1okpmrc_di" bpmnElement="Flow_1okpmrc">
+        <omgdi:waypoint x="580" y="270" />
+        <omgdi:waypoint x="640" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0uuc6of_gui" bpmnElement="Event_0uuc6of">
+        <omgdc:Bounds x="1975" y="255" width="30" height="30" />
+        <bpmndi:BPMNLabel labelStyle="sid-fbb7b1cd-4b48-4e0d-a384-69fad42c7304">
+          <omgdc:Bounds x="1953" y="293" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1upwg0a_di" bpmnElement="Activity_1tui7j8">
+        <omgdc:Bounds x="480" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_15s806p_gui" bpmnElement="Event_15s806p">
+        <omgdc:Bounds x="235" y="255" width="30" height="30" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="208" y="292" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1pt0oct_di" bpmnElement="Activity_0a56lg2">
+        <omgdc:Bounds x="320" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14l8cfg_gui" bpmnElement="Activity_14l8cfg" isExpanded="false">
+        <omgdc:Bounds x="640" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel labelStyle="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+          <omgdc:Bounds x="362.26357078552246" y="162" width="55.5428581237793" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0112wdd_gui" bpmnElement="Activity_0112wdd" isExpanded="false">
+        <omgdc:Bounds x="800" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel labelStyle="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+          <omgdc:Bounds x="516.4778537750244" y="162" width="67.11429214477539" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4_gui" bpmnElement="sid-C17D1584-E3A7-4163-BF4A-F852F24B67D4" isExpanded="false">
+        <omgdc:Bounds x="960" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel labelStyle="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+          <omgdc:Bounds x="669.006425857544" y="162" width="74.05714797973633" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1pngj6u_gui" bpmnElement="Activity_1pngj6u" isExpanded="false">
+        <omgdc:Bounds x="1120" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel labelStyle="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+          <omgdc:Bounds x="824.520715713501" y="156" width="91.02856826782227" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rw8x4a_di" bpmnElement="Activity_096zd4f">
+        <omgdc:Bounds x="1280" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0txhyns_di" bpmnElement="Gateway_0txhyns" isMarkerVisible="true">
+        <omgdc:Bounds x="1440" y="245" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1427" y="206" width="77" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jz5n2m_di" bpmnElement="Activity_0f6wouh">
+        <omgdc:Bounds x="1550" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1wo11ee_di" bpmnElement="Gateway_1wo11ee" isMarkerVisible="true">
+        <omgdc:Bounds x="1710" y="245" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0qski6s_di" bpmnElement="Activity_0eelwrr">
+        <omgdc:Bounds x="1820" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0azwjmr_di" bpmnElement="TextAnnotation_0azwjmr">
+        <omgdc:Bounds x="1650" y="120" width="205" height="98" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1rcd2tj_di" bpmnElement="Association_1rcd2tj">
+        <omgdi:waypoint x="1606" y="230" />
+        <omgdi:waypoint x="1650" y="169" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="sid-fbb7b1cd-4b48-4e0d-a384-69fad42c7304">
+      <omgdc:Font name="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+    <bpmndi:BPMNLabelStyle id="sid-cd313dba-2d79-44f3-bfc1-33a822d0dc25">
+      <omgdc:Font name="Arial" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</definitions>
